@@ -1,11 +1,12 @@
 services:
   db:
-    image: postgres:latest
+    image: 'bitnami/postgresql:latest'
     ports:
       - "5432:5432"
     restart: always
     environment:
-      POSTGRES_PASSWORD: changeme!
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: postgres
 
   adminer:
     image: adminer:latest

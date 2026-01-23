@@ -1,4 +1,10 @@
-package com.monkey.blog.services;
+package com.monkey.blog.services.impl;
 
-public class CategoryService {
+import com.monkey.blog.domain.entity.Category;
+
+import java.util.List;
+
+public interface CategoryService {
+
+    List<Category> listCategories();
 }
