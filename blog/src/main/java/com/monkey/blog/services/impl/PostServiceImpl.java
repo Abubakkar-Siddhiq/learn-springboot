@@ -97,6 +97,13 @@ public class PostServiceImpl implements PostService {
 
     @Override
     @Transactional
+    public void deletePost(UUID id) {
+        Post post = getPost(id);
+        postRepository.delete(post);
+    }
+
+    @Transactional
+    @Override
     public Post updatePost(UUID id, UpdatePostRequest updatePostRequest) {
         Post existingPost = postRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(("Post does not exist with id: " + id)));
